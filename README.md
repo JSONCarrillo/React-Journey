@@ -42,5 +42,7 @@ With render, you will have 2-ish arguments... lemme explain. Within ReactDom.ren
 document.getElementById("root"). With this, you can use render to, well, render what it is you want to put on a page.
 
 ```
+element = document.getElementById("root")
 
+ReactDOM.render(<h1>Hi, Mom!</h1>, element)
 ```
