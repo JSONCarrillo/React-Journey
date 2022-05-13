@@ -87,9 +87,11 @@ tick() {
 }
 ```
 
-### React App
+## React App
 
 This app is a culmination of what I've learned, as well as building a react app from scratch.
+
+### Building the React App
 
 I started out with the following command:
 
@@ -98,3 +100,36 @@ mkdir react-app && cd react-app && npm init -y
 ```
 
 This creates the react-app directory, cds into it, and initializes npm.
+
+Next, I ran:
+
+```
+npm install --save-dev webpack webpack-cli webpack-dev-server
+```
+
+This installs all the needed webpack modules as a dependency. After that, we install react with:
+
+```
+npm install react react-dom
+```
+
+From here, we need to install babel using:
+
+```
+npm install --save-dev babel-loader @babel/preset-env @babel/core @babel/plugin-transform-runtime @babel/preset-react babel-eslint @babel/runtime
+```
+
+Now we create the file .babelrc and write out the presets, and plugins (see the .babelrc file in the react-app directory). Next, I made that actual config file for webpack webpack.config.js.
+From here, we will configure the package.json file and add two lines into the "scripts" section.
+
+```
+"start": "webpack-dev-server",
+"build": "Webpack ."
+```
+
+With that done, I went ahead and added a src and public folder into the root directory. Within the public folder, I add an index.html file and added the basic boilerplate and the root element.
+After that, we will create two .js files. Index and App, Index will be the main entry point to the app, and App will be the root component. Once that's done, run:
+
+```
+npm run build
+```
