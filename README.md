@@ -28,13 +28,13 @@ In the render, I did it as such:
 
 ```
 render() {
-		return (
-			<div>
-				<h1>Hello!</h1>
-				<h2>The time is {this.state.date.toLocaleTimeString()}</h2>
-			</div>
-		);
-	}
+    return (
+        <div>
+            <h1>Hello!</h1>
+            <h2>The time is {this.state.date.toLocaleTimeString()}</h2>
+        </div>
+    );
+}
 ```
 
 This makes it so instead of rendering a new instance of the Date class, I call it from the state of the component.
@@ -45,9 +45,9 @@ Setting your state is within the constructor looks like this:
 
 ```
 constructor(props) {
-		super(props);
-		this.state = { date: new Date() };
-	}
+    super(props);
+    this.state = { date: new Date() };
+}
 ```
 
 As you can see, I create the this.state object within the constructor, with the key of date, and the value of new Date(). This then allows us to use this.state.date to then access the toLocaleTImeString method in the render method. Doing this, allows for greater reusability of the component.
@@ -59,10 +59,10 @@ Next, we want to start making the component update itself while also ensuring re
 Below, we set up the timer when it is first rendered:
 
 ```
-    // Sets up timer when it is first rendered using the special method below
-	componentDidMount() {
-		this.timerID = setInterval(() => this.tick(), 1000);
-	}
+// Sets up timer when it is first rendered using the special method below
+componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+}
 ```
 
 We create a this.timerID variable and save a setInterval function to use the tick method every second.
@@ -70,19 +70,31 @@ We create a this.timerID variable and save a setInterval function to use the tic
 Below, we have a method to clear the timer once it is removed from the DOM:
 
 ```
-	// clears the timer when the DOM produced by the component is removed
-	componentWillUnmount() {
-		clearInterval(this.timerID);
-	}
+// clears the timer when the DOM produced by the component is removed
+componentWillUnmount() {
+    clearInterval(this.timerID);
+}
 ```
 
 Finally, we create a tick method to update the state every time it is called:
 
 ```
-    // tick method to update the state
-	tick() {
-		this.setState({
-			date: new Date(),
-		});
-	}
+// tick method to update the state
+tick() {
+    this.setState({
+        date: new Date(),
+    });
+}
 ```
+
+### React App
+
+This app is a culmination of what I've learned, as well as building a react app from scratch.
+
+I started out with the following command:
+
+```
+mkdir react-app && cd react-app && npm init -y
+```
+
+This creates the react-app directory, cds into it, and initializes npm.
