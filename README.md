@@ -124,7 +124,7 @@ From here, we will configure the package.json file and add two lines into the "s
 
 ```
 "start": "webpack-dev-server",
-"build": "Webpack ."
+"build": "webpack"
 ```
 
 With that done, I went ahead and added a src and public folder into the root directory. Within the public folder, I add an index.html file and added the basic boilerplate and the root element.
