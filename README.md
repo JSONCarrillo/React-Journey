@@ -133,3 +133,7 @@ After that, we will create two .js files. Index and App, Index will be the main 
 ```
 npm run build
 ```
+
+## Lifting State
+
+This app demonstrates lifting state to other components to reflect changes in data
