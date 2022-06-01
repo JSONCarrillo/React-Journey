@@ -1,13 +1,15 @@
 import React from "react";
-import BoilingVirdict from "./BoilingVerdict";
+import BoilingVerdict from "./BoilingVerdict";
 
 class Calculator extends React.Component {
 	constructor(props) {
 		super(props);
+		// allows us to use this.handlechange
 		this.handleChange = this.handleChange.bind(this);
 		this.state = { temperature: "" };
 	}
 
+	//on change state is set to be whatever is in the input
 	handleChange(e) {
 		this.setState({ temperature: e.target.value });
 	}
@@ -18,7 +20,7 @@ class Calculator extends React.Component {
 			<fieldset>
 				<legend>Enter temperature in celcius</legend>
 				<input value={temperature} onChange={this.handleChange} />
-				<BoilingVirdict celsius={parseFloat(temperature)} />
+				<BoilingVerdict celsius={parseFloat(temperature)} />
 			</fieldset>
 		);
 	}
