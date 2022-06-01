@@ -1,13 +1,13 @@
 import React from "react";
 import Calculator from "./components/Calculator";
-import TemperatureInput from "./components/TemperatureInput";
+import CalculatorScale from "./components/CalculatorScale";
 
 class App extends React.Component {
 	render() {
 		return (
 			<div>
 				<Calculator />
-				<TemperatureInput />
+				<CalculatorScale />
 			</div>
 		);
 	}

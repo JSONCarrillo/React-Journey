@@ -6,7 +6,7 @@ class Calculator extends React.Component {
 		super(props);
 		// allows us to use this.handlechange
 		this.handleChange = this.handleChange.bind(this);
-		this.state = { temperature: "" };
+		this.state = { temperature: "", scale: "c" };
 	}
 
 	//on change state is set to be whatever is in the input

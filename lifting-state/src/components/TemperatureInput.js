@@ -1,5 +1,4 @@
 import React from "react";
-import CalculatorScale from "./CalculatorScale";
 
 const scaleNames = {
 	c: "Celsius",
@@ -14,7 +13,7 @@ class TemperatureInput extends React.Component {
 	}
 
 	handleChange(e) {
-		this.setState({ temperature: e.target.value });
+		this.props.onTemperatureChange(e.target.value);
 	}
 
 	render() {
